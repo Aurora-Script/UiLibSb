@@ -4017,7 +4017,7 @@ local Library do
 
         Widgets.ImageStroke = Instances:Create("UIStroke", {
             Parent = Widgets.ImageLabel.Instance,
-            Color = Color3.fromRGB(255, 0, 255),
+            Color = Color3.fromRGB(255, 255, 255),
             Thickness = 1
         })
 
@@ -4045,7 +4045,7 @@ local Library do
 
         task.defer(function()
             if self._ExpressWidgets ~= Widgets then return end
-            Widgets.ImageLabel.Instance.Image = "rbxassetid://118529184603611"
+            Widgets.ImageLabel.Instance.Image = "rbxassetid://121863881910459"
         end)
 
         task.spawn(function()
