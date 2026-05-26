@@ -4677,7 +4677,8 @@ local Library do
                     ClipsDescendants = true,
                     Visible = false,
                     BorderSizePixel = 0,
-                    BackgroundColor3 = FromRGB(17, 16, 20)
+                    BackgroundColor3 = FromRGB(17, 16, 20),
+                    BackgroundTransparency = 0.3
                 })
                 Items["MainFrame"]:AddToTheme({ BackgroundColor3 = "Background" })
 
