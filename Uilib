@@ -4018,7 +4018,7 @@ local Library do
 
         Widgets.ImageStroke = Instances:Create("UIStroke", {
             Parent = Widgets.ImageLabel.Instance,
-            Color = Color3.fromRGB(255, 255, 255),
+            Color = Color3.fromRGB(0, 0, 0),
             Thickness = 1
         })
 
