@@ -4001,7 +4001,7 @@ local Library do
         Widgets.MainFrame = Instances:Create("Frame", {
             Parent = Widgets.MainGui.Instance,
             BackgroundColor3 = Color3.fromRGB(20, 20, 20),
-            BackgroundTransparency = 0.3,                 ------cambiar transparencia.---
+            BackgroundTransparency = 0.6,
             BorderSizePixel = 0,
             Position = UDim2New(0.5, -25, 0, 30),
             Size = UDim2New(0, 25, 0, 25),
