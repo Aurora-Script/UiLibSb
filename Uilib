@@ -4000,7 +4000,8 @@ local Library do
 
         Widgets.MainFrame = Instances:Create("Frame", {
             Parent = Widgets.MainGui.Instance,
-            BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+            BackgroundTransparency = 1,   -- totalmente transparente
             BorderSizePixel = 0,
             Position = UDim2New(0.5, -25, 0, 30),
             Size = UDim2New(0, 33, 0, 33),
