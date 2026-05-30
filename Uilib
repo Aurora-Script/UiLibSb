@@ -4026,7 +4026,7 @@ local Library do
 
         Widgets.MainButton = Instances:Create("TextButton", {
             Parent = Widgets.ImageLabel.Instance,
-            BackgroundTransparency = 1,
+            BackgroundTransparency = 0,
             Size = UDim2New(1, 0, 1, 0),
             Text = ""
         })
