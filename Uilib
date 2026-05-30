@@ -6542,7 +6542,7 @@ local Library do
                 Description = Data.Description or Data.Description or "",
                 Side = Data.Side or Data.side or 1,
                 Premium = Data.Premium or Data.premium or false,
-                IsOpen = false,
+                IsOpen = true,
                 Items = {}
             }
 
