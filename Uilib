@@ -4003,7 +4003,7 @@ local Library do
             BackgroundTransparency = 1,
             BorderSizePixel = 0,
             Position = UDim2New(0.5, -25, 0, 30),
-            Size = UDim2New(0, 50, 0, 50),
+            Size = UDim2New(0, 30, 0, 30),
             Visible = CheckSetting("ShowButton")
         })
 
@@ -4013,7 +4013,7 @@ local Library do
         Widgets.ImageLabel = Instances:Create("ImageLabel", {
             Parent = Widgets.MainFrame.Instance,
             Size = UDim2New(1, 0, 1, 0),
-            BackgroundTransparency = 1
+            BackgroundTransparency = 0
         })
 
         Widgets.ImageStroke = Instances:Create("UIStroke", {
@@ -4027,7 +4027,7 @@ local Library do
         Widgets.MainButton = Instances:Create("TextButton", {
             Parent = Widgets.ImageLabel.Instance,
             BackgroundTransparency = 1,
-            Size = UDim2New(1, 0, 0, 0),
+            Size = UDim2New(1, 0, 1, 0),
             Text = ""
         })
 
