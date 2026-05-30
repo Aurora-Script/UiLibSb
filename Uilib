@@ -4018,7 +4018,7 @@ local Library do
 
         Widgets.ImageStroke = Instances:Create("UIStroke", {
             Parent = Widgets.ImageLabel.Instance,
-            Color = Color3.fromRGB(255, 0, 255),
+            Color = Color3.fromRGB(0, 0, 0),
             Thickness = 1
         })
 
@@ -4678,7 +4678,7 @@ local Library do
                     Visible = false,
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(17, 16, 20),
-                    BackgroundTransparency = 0.5,
+                    BackgroundTransparency = 0.3,
                 })
                 Items["MainFrame"]:AddToTheme({ BackgroundColor3 = "Background" })
 
