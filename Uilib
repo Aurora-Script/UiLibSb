@@ -4003,7 +4003,7 @@ local Library do
             BackgroundColor3 = Color3.fromRGB(20, 20, 20),
             BorderSizePixel = 0,
             Position = UDim2New(0.5, -25, 0, 30),
-            Size = UDim2New(0, 25, 0, 25),
+            Size = UDim2New(0, 33, 0, 33),
             Visible = CheckSetting("ShowButton")
         })
 
@@ -4018,7 +4018,7 @@ local Library do
 
         Widgets.ImageStroke = Instances:Create("UIStroke", {
             Parent = Widgets.ImageLabel.Instance,
-            Color = Color3.fromRGB(0, 255, 255),
+            Color = Color3.fromRGB(255, 0, 255),
             Thickness = 1
         })
 
