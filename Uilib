@@ -4046,7 +4046,7 @@ local Library do
 
         task.defer(function()
             if self._ExpressWidgets ~= Widgets then return end
-            Widgets.ImageLabel.Instance.Image = "rbxassetid://49327490"
+            Widgets.ImageLabel.Instance.Image = "rbxassetid://17704623211"
         end)
 
         task.spawn(function()
