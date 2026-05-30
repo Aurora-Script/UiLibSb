@@ -1,3 +1,4 @@
+
 if getgenv().Library then
     getgenv().Library:Unload()
 end
@@ -3999,11 +4000,11 @@ local Library do
 
         Widgets.MainFrame = Instances:Create("Frame", {
             Parent = Widgets.MainGui.Instance,
-            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
-            BackgroundTransparency = 1,
+            BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+            BackgroundTransparency = 0.3,                 ------cambiar transparencia.---
             BorderSizePixel = 0,
             Position = UDim2New(0.5, -25, 0, 30),
-            Size = UDim2New(0, 30, 0, 30),
+            Size = UDim2New(0, 25, 0, 25),
             Visible = CheckSetting("ShowButton")
         })
 
@@ -4013,12 +4014,12 @@ local Library do
         Widgets.ImageLabel = Instances:Create("ImageLabel", {
             Parent = Widgets.MainFrame.Instance,
             Size = UDim2New(1, 0, 1, 0),
-            BackgroundTransparency = 0
+            BackgroundTransparency = 1
         })
 
         Widgets.ImageStroke = Instances:Create("UIStroke", {
             Parent = Widgets.ImageLabel.Instance,
-            Color = Color3.fromRGB(0, 0, 0),
+            Color = Color3.fromRGB(0, 255, 255),
             Thickness = 1
         })
 
@@ -4046,7 +4047,7 @@ local Library do
 
         task.defer(function()
             if self._ExpressWidgets ~= Widgets then return end
-            Widgets.ImageLabel.Instance.Image = "rbxassetid://5028857084"
+            Widgets.ImageLabel.Instance.Image = "rbxassetid://49327490"
         end)
 
         task.spawn(function()
@@ -4677,8 +4678,7 @@ local Library do
                     ClipsDescendants = true,
                     Visible = false,
                     BorderSizePixel = 0,
-                    BackgroundColor3 = FromRGB(17, 16, 20),
-                    BackgroundTransparency = 0.3
+                    BackgroundColor3 = FromRGB(17, 16, 20)
                 })
                 Items["MainFrame"]:AddToTheme({ BackgroundColor3 = "Background" })
 
