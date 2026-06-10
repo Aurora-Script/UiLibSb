@@ -396,8 +396,14 @@ local Library do
         if not isfolder(Value) then makefolder(Value) end
     end
 
-    -- OPTIMIZACIÓN: Se eliminó la descarga de imágenes aquí
-    -- Las imágenes se descargarán bajo demanda cuando se usen
+    for Index, Value in Library.Images do
+        local ImageData = Value
+        local ImageName = ImageData[1]
+        local ImageLink = ImageData[2]
+        if not isfile(Library.Folders.Assets .. "/" .. ImageName) then
+            writefile(Library.Folders.Assets .. "/" .. ImageName, game:HttpGet(ImageLink))
+        end
+    end
 
     local Tween = {}
     do
@@ -766,10 +772,34 @@ local Library do
         end
     end
 
-    -- OPTIMIZACIÓN: Se eliminó la descarga de fuentes aquí
-    -- Ahora usa fuentes nativas de Roblox
-    Library.Font = Font.new("GothamSSm", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-    Library.Subfont = Font.new("GothamSSm", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+    local CustomFont = {}
+    do
+        function CustomFont:New(Name, Weight, Style, Data)
+            if not isfile(Data.Id) then
+                writefile(Data.Id, game:HttpGet(Data.Url))
+            end
+            local Data = {
+                name = Name,
+                faces = {{
+                    name = Name,
+                    weight = Weight,
+                    style = Style,
+                    assetId = getcustomasset(Data.Id)
+                }}
+            }
+            writefile(Library.Folders.Assets .. "/" .. Name .. ".font", HttpService:JSONEncode(Data))
+            return Font.new(getcustomasset(Library.Folders.Assets .. "/" .. Name .. ".font"))
+        end
+
+        Library.Font = CustomFont:New("Inter", 400, "Regular", {
+            Id = "InterSemibold",
+            Url = "https://github.com/sametexe001/luas/raw/refs/heads/main/fonts/InterSemibold.ttf"
+        })
+        Library.Subfont = CustomFont:New("InterMedium", 400, "Regular", {
+            Id = "InterMedium",
+            Url = "https://github.com/sametexe001/luas/raw/refs/heads/main/fonts/InterMedium.ttf"
+        })
+    end
 
     Library.Holder = Instances:Create("ScreenGui", {
         Parent = gethui(),
@@ -840,14 +870,7 @@ local Library do
     Library.GetImage = function(self, Image)
         local ImageData = self.Images[Image]
         if not ImageData then return end
-        -- LAZY LOADING: Solo descarga la imagen cuando se necesita
-        local ImageName = ImageData[1]
-        local ImageLink = ImageData[2]
-        local FilePath = self.Folders.Assets .. "/" .. ImageName
-        if not isfile(FilePath) then
-            writefile(FilePath, game:HttpGet(ImageLink))
-        end
-        return getcustomasset(FilePath)
+        return getcustomasset(self.Folders.Assets .. "/" .. ImageData[1])
     end
 
     Library.Round = function(self, Number, Float)
