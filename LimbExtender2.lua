@@ -2,7 +2,7 @@ local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
 local DEFAULTS = {
-	TOGGLE = "L",
+	TOGGLE = "",
 	TARGET_LIMB = "UpperTorso",
 	LIMB_SIZE = 15,
 	LIMB_TRANSPARENCY = 0.9,
